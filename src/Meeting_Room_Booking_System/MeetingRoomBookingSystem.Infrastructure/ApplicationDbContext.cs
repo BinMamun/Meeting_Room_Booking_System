@@ -13,5 +13,17 @@ namespace MeetingRoomBookingSystem.Infrastructure
             _connectionString = connectionString;
             _migrationAssembly = migrationAssembly;
         }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer(_connectionString,
+                    x => x.MigrationsAssembly(_migrationAssembly));
+            }
+
+            base.OnConfiguring(optionsBuilder);
+        }
+
     }
 }

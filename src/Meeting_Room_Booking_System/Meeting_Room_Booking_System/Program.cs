@@ -39,7 +39,7 @@ try
     #endregion
 
     builder.Services.AddDbContext<ApplicationDbContext>(options =>
-        options.UseSqlServer(connectionString));
+        options.UseSqlServer(connectionString, (x) => x.MigrationsAssembly(migrationAssembly)));
 
     #region Autofac Configuration For Dependency Injection
 
