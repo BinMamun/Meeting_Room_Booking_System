@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using MeetingRoomBookingSystem.Infrastructure;
 
 namespace MeetingRoomBookingSystem.Web
 {
@@ -6,6 +7,11 @@ namespace MeetingRoomBookingSystem.Web
     {
         protected override void Load(ContainerBuilder builder)
         {
+            builder.RegisterType<ApplicationDbContext>().AsSelf()
+                .WithParameter("connectionString", connectionString)
+                .WithParameter("migrationAssembly", migrationAssembly)
+                .InstancePerLifetimeScope();
+
             base.Load(builder);
         }
     }
