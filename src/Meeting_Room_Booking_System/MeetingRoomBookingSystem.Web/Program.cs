@@ -83,8 +83,8 @@ try
         pattern: "{controller=Home}/{action=Index}/{id?}")
         .WithStaticAssets();
 
-    app.MapRazorPages()
-       .WithStaticAssets();
+    //app.MapRazorPages()
+    //   .WithStaticAssets();
 
     Log.Information("Application Started Sucessfully");
     app.Run();
