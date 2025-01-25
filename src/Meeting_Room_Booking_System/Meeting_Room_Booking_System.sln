@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35707.178 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Web", "Meeting_Room_Booking_System\Application.Web.csproj", "{B98308AA-232B-4B3E-A981-19CD9C59726D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetingRoomBookingSystem.Web", "Meeting_Room_Booking_System\MeetingRoomBookingSystem.Web.csproj", "{B98308AA-232B-4B3E-A981-19CD9C59726D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetingRoomBookingSystem.Domain", "Application.Domain\MeetingRoomBookingSystem.Domain.csproj", "{19065729-AD3A-4000-B952-F4E28B160261}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{B98308AA-232B-4B3E-A981-19CD9C59726D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B98308AA-232B-4B3E-A981-19CD9C59726D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B98308AA-232B-4B3E-A981-19CD9C59726D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19065729-AD3A-4000-B952-F4E28B160261}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19065729-AD3A-4000-B952-F4E28B160261}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19065729-AD3A-4000-B952-F4E28B160261}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19065729-AD3A-4000-B952-F4E28B160261}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
