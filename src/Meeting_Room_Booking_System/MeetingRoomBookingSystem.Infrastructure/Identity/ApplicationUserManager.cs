@@ -7,13 +7,13 @@ namespace MeetingRoomBookingSystem.Infrastructure.Identity
     public class ApplicationUserManager : UserManager<ApplicationUser>
     {
         public ApplicationUserManager(
-            IUserStore<ApplicationUser> store,
-            IOptions<IdentityOptions> optionsAccessor,
+            IUserStore<ApplicationUser> store, 
+            IOptions<IdentityOptions> optionsAccessor, 
             IPasswordHasher<ApplicationUser> passwordHasher,
             IEnumerable<IUserValidator<ApplicationUser>> userValidators,
-            IEnumerable<IPasswordValidator<ApplicationUser>> passwordValidators,
-            ILookupNormalizer keyNormalizer, IdentityErrorDescriber errors,
-            IServiceProvider services,
+            IEnumerable<IPasswordValidator<ApplicationUser>> passwordValidators, 
+            ILookupNormalizer keyNormalizer, IdentityErrorDescriber errors, 
+            IServiceProvider services, 
             ILogger<UserManager<ApplicationUser>> logger) :
             base(store, optionsAccessor, passwordHasher, userValidators, passwordValidators, keyNormalizer, errors, services, logger)
         {

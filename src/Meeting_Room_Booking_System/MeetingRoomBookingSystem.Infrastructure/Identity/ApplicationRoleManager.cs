@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
 
 namespace MeetingRoomBookingSystem.Infrastructure.Identity
@@ -12,9 +7,9 @@ namespace MeetingRoomBookingSystem.Infrastructure.Identity
     {
         public ApplicationRoleManager(
             IRoleStore<ApplicationRole> store,
-            IEnumerable<IRoleValidator<ApplicationRole>> roleValidators,
+            IEnumerable<IRoleValidator<ApplicationRole>> roleValidators, 
             ILookupNormalizer keyNormalizer, IdentityErrorDescriber errors,
-            ILogger<RoleManager<ApplicationRole>> logger) :
+            ILogger<RoleManager<ApplicationRole>> logger) : 
             base(store, roleValidators, keyNormalizer, errors, logger)
         {
         }

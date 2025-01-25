@@ -2,8 +2,8 @@ using System.Reflection;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using MeetingRoomBookingSystem.Infrastructure;
+using MeetingRoomBookingSystem.Infrastructure.Extensions;
 using MeetingRoomBookingSystem.Web;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
@@ -53,8 +53,7 @@ try
 
     builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-    builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-        .AddEntityFrameworkStores<ApplicationDbContext>();
+    builder.Services.AddIdentity();
 
     builder.Services.AddControllersWithViews();
 
