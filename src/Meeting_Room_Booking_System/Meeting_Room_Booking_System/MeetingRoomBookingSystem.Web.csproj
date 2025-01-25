@@ -22,4 +22,8 @@
     <Folder Include="Logs\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MeetingRoomBookingSystem.Infrastructure\MeetingRoomBookingSystem.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

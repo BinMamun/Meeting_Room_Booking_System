@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Meeting_Room_Booking_System.Data
+namespace MeetingRoomBookingSystem.Infrastructure
 {
     public class ApplicationDbContext : IdentityDbContext
     {

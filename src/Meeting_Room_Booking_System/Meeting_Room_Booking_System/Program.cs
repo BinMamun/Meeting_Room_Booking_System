@@ -1,7 +1,7 @@
 using System.Reflection;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using Meeting_Room_Booking_System.Data;
+using MeetingRoomBookingSystem.Infrastructure;
 using MeetingRoomBookingSystem.Web;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
