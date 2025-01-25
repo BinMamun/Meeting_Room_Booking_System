@@ -6,6 +6,8 @@ using MeetingRoomBookingSystem.Infrastructure.Extensions;
 using MeetingRoomBookingSystem.Web;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using Microsoft.AspNetCore.Identity;
+using MeetingRoomBookingSystem.Infrastructure.Identity;
 
 #region Configure Bootstrap Logger using serilog 
 var config = new ConfigurationBuilder()
@@ -53,7 +55,9 @@ try
 
     builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-    builder.Services.AddIdentity();
+    builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ApplicationDbContext>();
+
+    //builder.Services.AddIdentity();
 
     builder.Services.AddControllersWithViews();
 
@@ -83,8 +87,8 @@ try
         pattern: "{controller=Home}/{action=Index}/{id?}")
         .WithStaticAssets();
 
-    //app.MapRazorPages()
-    //   .WithStaticAssets();
+    app.MapRazorPages()
+       .WithStaticAssets();
 
     Log.Information("Application Started Sucessfully");
     app.Run();
@@ -98,5 +102,7 @@ finally
 {
     Log.CloseAndFlush();
 }
+
+
 
 
