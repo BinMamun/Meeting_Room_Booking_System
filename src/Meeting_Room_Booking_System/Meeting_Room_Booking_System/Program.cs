@@ -1,4 +1,8 @@
+using System.Reflection;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using Meeting_Room_Booking_System.Data;
+using MeetingRoomBookingSystem.Web;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
@@ -23,6 +27,9 @@ try
     // Add services to the container.
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
+
+    var migrationAssembly = Assembly.GetExecutingAssembly().FullName;
+
     #region Serilog integration for Application logs
 
     builder.Host.UseSerilog((services, ls) => ls
@@ -33,6 +40,17 @@ try
 
     builder.Services.AddDbContext<ApplicationDbContext>(options =>
         options.UseSqlServer(connectionString));
+
+    #region Autofac Configuration For Dependency Injection
+
+    builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory(
+        containerBuilder =>
+        {
+            containerBuilder.RegisterModule(new WebModule(connectionString, migrationAssembly));
+        }));
+
+    #endregion
+
     builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
     builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
