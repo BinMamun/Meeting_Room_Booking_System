@@ -1,8 +1,8 @@
 using System.Diagnostics;
-using Meeting_Room_Booking_System.Models;
+using MeetingRoomBookingSystem.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Meeting_Room_Booking_System.Controllers
+namespace MeetingRoomBookingSystem.Controllers
 {
     public class HomeController : Controller
     {

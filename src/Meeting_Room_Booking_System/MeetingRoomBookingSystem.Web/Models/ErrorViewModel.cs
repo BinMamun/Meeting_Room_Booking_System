@@ -1,4 +1,4 @@
-namespace Meeting_Room_Booking_System.Models
+namespace MeetingRoomBookingSystem.Web.Models
 {
     public class ErrorViewModel
     {
