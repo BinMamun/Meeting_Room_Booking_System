@@ -12,6 +12,7 @@ namespace MeetingRoomBookingSystem.Web.Areas.Admin.Controllers
     {
         private readonly ILogger<MeetingRoomController> _logger = logger;
         private readonly IMeetingRoomManagementService _meetingRoomService = meetingRoomService;
+
         public IActionResult Index()
         {
             return View();
