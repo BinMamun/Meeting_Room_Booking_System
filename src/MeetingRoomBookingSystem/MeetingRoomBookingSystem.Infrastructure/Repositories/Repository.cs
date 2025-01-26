@@ -2,6 +2,7 @@
 using MeetingRoomBookingSystem.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
+using System.Linq.Dynamic.Core;
 
 namespace MeetingRoomBookingSystem.Infrastructure.Repositories
 {
