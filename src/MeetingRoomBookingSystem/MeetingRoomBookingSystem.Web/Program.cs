@@ -1,4 +1,4 @@
-using MeetingRoomBookingSystem.Web.Data;
+using MeetingRoomBookingSystem.Infrastructure;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 

@@ -15,4 +15,13 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MeetingRoomBookingSystem.Application\MeetingRoomBookingSystem.Application.csproj" />
+    <ProjectReference Include="..\MeetingRoomBookingSystem.Infrastructure\MeetingRoomBookingSystem.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
