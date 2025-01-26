@@ -38,5 +38,8 @@ namespace MeetingRoomBookingSystem.Infrastructure
             base.OnModelCreating(builder);
         }
 
+        public DbSet<MeetingRoom> MeetingRooms { get; set; }
+        public DbSet<Booking> Bookings { get; set; }
+
     }
 }
