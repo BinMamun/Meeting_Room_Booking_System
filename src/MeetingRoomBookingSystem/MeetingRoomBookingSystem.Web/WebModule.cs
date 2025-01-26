@@ -6,6 +6,7 @@ using MeetingRoomBookingSystem.Domain.RepositoryContracts;
 using MeetingRoomBookingSystem.Domain.ServiceContracts;
 using MeetingRoomBookingSystem.Infrastructure;
 using MeetingRoomBookingSystem.Infrastructure.Repositories;
+using MeetingRoomBookingSystem.Infrastructure.Utilities;
 
 namespace MeetingRoomBookingSystem.Web
 {
@@ -32,6 +33,10 @@ namespace MeetingRoomBookingSystem.Web
 
             builder.RegisterType<BookingRepository>()
                 .As<IBookingRepository>()
+                .InstancePerLifetimeScope();
+
+            builder.RegisterType<ImageServiceUtility>()
+                .As<IImageServiceUtility>()
                 .InstancePerLifetimeScope();
 
             base.Load(builder);
