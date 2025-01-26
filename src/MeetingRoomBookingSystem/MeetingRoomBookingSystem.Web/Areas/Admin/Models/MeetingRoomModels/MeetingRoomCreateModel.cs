@@ -8,7 +8,7 @@ namespace MeetingRoomBookingSystem.Web.Areas.Admin.Models.MeetingRoomModels
         [Required, Display(Name = "Meeting Room Name")]
         public string MeetingRoomTitle { get; set; }
         public string? Description { get; set; }
-        public string? Image { get; set; }
+        public IFormFile? Image { get; set; }
         public string? Location { get; set; }
 
         [Required]
