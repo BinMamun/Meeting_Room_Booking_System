@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using MeetingRoomBookingSystem.Domain.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace MeetingRoomBookingSystem.Infrastructure
@@ -25,6 +26,17 @@ namespace MeetingRoomBookingSystem.Infrastructure
             base.OnConfiguring(optionsBuilder);
         }
 
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+
+            builder.Entity<MeetingRoom>()
+                .HasMany(mr => mr.Bookings)
+                .WithOne(b => b.MeetingRoom)
+                .HasForeignKey(b => b.MeetingRoomId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            base.OnModelCreating(builder);
+        }
 
     }
 }

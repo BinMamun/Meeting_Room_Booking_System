@@ -13,6 +13,7 @@ namespace MeetingRoomBookingSystem.Domain.Entities
         public string? Facilities { get; set; }
         public bool IsActive { get; set; }
         public DateOnly? Available { get; set; }
+        public IList<Booking> Bookings { get; set; }
 
     }
 }
