@@ -22,6 +22,8 @@ Log.Logger = new LoggerConfiguration()
 
 try
 {
+    Log.Information("Application Starting up...");
+
     var builder = WebApplication.CreateBuilder(args);
 
     // Add services to the container.
@@ -87,6 +89,7 @@ try
     app.MapRazorPages()
        .WithStaticAssets();
 
+    Log.Information("Application Started Sucessfully");
     app.Run();
 }
 catch (Exception ex)
