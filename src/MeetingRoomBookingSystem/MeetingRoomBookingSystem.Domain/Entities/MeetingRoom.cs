@@ -11,7 +11,7 @@ namespace MeetingRoomBookingSystem.Domain.Entities
         public int Capacity { get; set; }
         public string? Facilities { get; set; }
         public bool IsActive { get; set; }
-        public DateTime? Available { get; set; }
+        public DateTime? Availablity { get; set; }
         public IList<Booking> Bookings { get; set; }
 
     }

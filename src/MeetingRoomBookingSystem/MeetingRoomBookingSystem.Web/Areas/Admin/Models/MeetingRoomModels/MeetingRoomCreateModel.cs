@@ -19,6 +19,6 @@ namespace MeetingRoomBookingSystem.Web.Areas.Admin.Models.MeetingRoomModels
         public bool IsActive { get; set; }
 
         [Required, Display(Name = "Available Day")]
-        public DateTime? Available { get; set; }
+        public DateTime? Availablity { get; set; }
     }
 }
