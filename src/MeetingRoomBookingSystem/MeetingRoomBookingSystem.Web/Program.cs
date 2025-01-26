@@ -1,5 +1,8 @@
 using System.Reflection;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using MeetingRoomBookingSystem.Infrastructure;
+using MeetingRoomBookingSystem.Web;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
@@ -41,6 +44,18 @@ try
 
     builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
         .AddEntityFrameworkStores<ApplicationDbContext>();
+
+    #region Autofac Configuration For Dependency Injection
+
+    builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory(
+        containerBuilder =>
+        {
+            containerBuilder.RegisterModule(new WebModule(connectionString, migrationAssembly));
+        }));
+
+    #endregion
+
+
     builder.Services.AddControllersWithViews();
 
     var app = builder.Build();
