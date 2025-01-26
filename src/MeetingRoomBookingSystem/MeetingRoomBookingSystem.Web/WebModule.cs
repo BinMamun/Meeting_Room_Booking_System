@@ -1,4 +1,6 @@
 ﻿using Autofac;
+using MeetingRoomBookingSystem.Domain;
+using MeetingRoomBookingSystem.Domain.RepositoryContracts;
 using MeetingRoomBookingSystem.Infrastructure;
 
 namespace MeetingRoomBookingSystem.Web
@@ -10,6 +12,10 @@ namespace MeetingRoomBookingSystem.Web
             builder.RegisterType<ApplicationDbContext>().AsSelf()
                 .WithParameter("connectionString", connectionString)
                 .WithParameter("migrationAssembly", migrationAssembly)
+                .InstancePerLifetimeScope();
+
+            builder.RegisterType<ApplicationUnitOfWork>()
+                .As<IApplicationUnitOfWork>()
                 .InstancePerLifetimeScope();
 
             base.Load(builder);

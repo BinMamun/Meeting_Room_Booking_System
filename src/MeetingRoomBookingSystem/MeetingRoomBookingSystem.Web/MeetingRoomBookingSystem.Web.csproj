@@ -32,6 +32,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MeetingRoomBookingSystem.Application\MeetingRoomBookingSystem.Application.csproj" />
+    <ProjectReference Include="..\MeetingRoomBookingSystem.Domain\MeetingRoomBookingSystem.Domain.csproj" />
     <ProjectReference Include="..\MeetingRoomBookingSystem.Infrastructure\MeetingRoomBookingSystem.Infrastructure.csproj" />
   </ItemGroup>
 
