@@ -3,7 +3,7 @@ using MeetingRoomBookingSystem.Domain;
 
 namespace MeetingRoomBookingSystem.Web.Areas.Admin.Models.MeetingRoomModels
 {
-    public class MeetingRoomCommonModel : DataTables
+    public class MeetingRoomCreateModel : DataTables
     {
         [Required, Display(Name = "Meeting Room Name")]
         public string MeetingRoomTitle { get; set; }
