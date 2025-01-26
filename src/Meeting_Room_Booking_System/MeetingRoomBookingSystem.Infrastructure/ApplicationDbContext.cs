@@ -38,11 +38,10 @@ namespace MeetingRoomBookingSystem.Infrastructure
                     new ApplicationUser
                     {
                         Id = Guid.Parse("73EFA293-2C32-4746-9ECC-914AE3233251"),
-                        UserName = "admin",
-                        NormalizedUserName = "ADMIN",
+                        UserName = "12345",
+                        NormalizedUserName = "12345",
                         PasswordHash = "AQAAAAIAAYagAAAAEJvlP7iT7x94GkCsdqJRk0qGdGTywCXDjEP57/J0lodU+Z2mFSPoU2Trb20dkgYRQA==",
-                        FirstName = "Admin",
-                        Pin = 12345,
+                        FullName = "Admin",
                         Department = "Administration",
                         SecurityStamp = "2176714C-1B4A-4EA1-ADAC-B34266A85BF2",
                         ConcurrencyStamp = "A6D75F7A-EB62-4389-8C2E-BF43AAAFA43D"

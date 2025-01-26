@@ -5,8 +5,8 @@ namespace MeetingRoomBookingSystem.Web.Models
 {
     public class LogInModel
     {
-        [Required]
-        public int Pin { get; set; }
+        [Required, Display(Name = "Pin")]
+        public string UserName { get; set; }
 
         [Required, DataType(DataType.Password)]
         public string Password { get; set; }
