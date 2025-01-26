@@ -57,7 +57,9 @@ try
 
     #endregion
 
-
+    #region AutoMapper Configuration
+    builder.Services.AddAutoMapper(typeof(WebProfile).Assembly);
+    #endregion
     builder.Services.AddControllersWithViews();
 
     var app = builder.Build();
