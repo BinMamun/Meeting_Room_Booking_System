@@ -2,6 +2,7 @@
 
 namespace MeetingRoomBookingSystem.Web.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class DashboardController : Controller
     {
         private readonly ILogger<DashboardController> _logger;

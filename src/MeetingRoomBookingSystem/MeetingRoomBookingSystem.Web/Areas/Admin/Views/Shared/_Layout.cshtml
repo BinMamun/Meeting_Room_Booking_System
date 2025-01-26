@@ -51,7 +51,7 @@
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
-                <partial name="./PartialViews/_UsernamePartialView.cshtml" />
+                @* <partial name="./PartialViews/_UsernamePartialView.cshtml" /> *@
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -151,36 +151,6 @@
                                 </li>
                             </ul>
                         </li>
-                        @if (User.IsInRole("Super Admin"))
-                        {
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="nav-icon bi bi-tools text-info"></i>
-                                    <p>
-                                        Tools
-                                        <i class="fas fa-angle-down right"></i>
-                                    </p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a asp-area="Admin" asp-controller="User"
-                                           asp-action="Index"
-                                           class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "User" ? "active" : "")">
-                                            <i class="nav-icon fas"></i>
-                                            <p>Users</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a asp-area="Admin" asp-controller="Role"
-                                           asp-action="Index"
-                                           class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Role" ? "active" : "")">
-                                            <i class="nav-icon fas"></i>
-                                            <p>Roles</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        }
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
