@@ -95,5 +95,18 @@ namespace MeetingRoomBookingSystem.Infrastructure.Repositories
                     return await query.ToListAsync();
             }
         }
+
+        public virtual async Task<int> GetCountAsync(Expression<Func<TEntity, bool>> filter = null)
+        {
+            IQueryable<TEntity> query = _dbSet;
+            int count;
+
+            if (filter != null)
+                count = await query.CountAsync(filter);
+            else
+                count = await query.CountAsync();
+
+            return count;
+        }
     }
 }
