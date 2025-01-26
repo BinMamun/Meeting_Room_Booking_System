@@ -1,7 +1,9 @@
 ﻿using Autofac;
+using MeetingRoomBookingSystem.Application;
 using MeetingRoomBookingSystem.Domain;
 using MeetingRoomBookingSystem.Domain.Entities;
 using MeetingRoomBookingSystem.Domain.RepositoryContracts;
+using MeetingRoomBookingSystem.Domain.ServiceContracts;
 using MeetingRoomBookingSystem.Infrastructure;
 using MeetingRoomBookingSystem.Infrastructure.Repositories;
 
@@ -18,6 +20,10 @@ namespace MeetingRoomBookingSystem.Web
 
             builder.RegisterType<ApplicationUnitOfWork>()
                 .As<IApplicationUnitOfWork>()
+                .InstancePerLifetimeScope();
+
+            builder.RegisterType<MeetingRoomManagementService>()
+                .As<IMeetingRoomManagementService>()
                 .InstancePerLifetimeScope();
 
             builder.RegisterType<MeetingRoomRepository>()
